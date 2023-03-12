@@ -1,0 +1,62 @@
+# This is the default configuration file for the plugin you can change it to your liking
+settings:
+    turn_calculation: 5
+    collision_check: 5
+    player_control_item: "minecraft:bone"                              # item that will be used to control the launcher (itemID)
+    world_load_time: 200                                               # computers will be loaded after this time (in ticks) (default: 400)
+
+messages:
+    target_locked: "§aYou are targeted by a homing missile"
+
+launchers:
+    classic:
+        is_homing: true                                                 # if true, the projectile has homing ability
+        turn_radius: 0.26                                               # max turn angle per tick in radians (has no effect if homing is false)
+        reload_time: 500                                                # as ms
+        projectile_speed: 0.2                                           # block per second
+        projectile_lifetime: 500                                        # ticks (a tick is 1/20 of a second)
+        aim_delay: 5000                                                 # as ms
+        material_fired: "minecraft:stick#1"                             # customItemID#amount (if amount is not specified, it will be 1)
+        potion_effect: "BLINDNESS#30#1"                                 # effect#duration#amplifier
+        particle_trail: "ASH"                                           # particle name
+        ammo_type: "minecraft:TNT#2"                                    # itemID#amount (if amount is not specified, it will be 1)
+        explosive_yield: 3                                              # ???
+        shield_damage: 3                                                #
+        structure: "minecraft:black_wool#minecraft:green_wool#minecraft:yellow_wool#minecraft:black_wool#minecraft:black_wool"    # itemID#itemID#itemID
+        sound: "minecraft:block.anvil.hit#1#1#20"                            # sound#volume(between 1 and 0)#pitch(between 1 and 0)
+        launch_sound: "minecraft:block.anvil.hit#1#1#20"                     # sound#volume(between 1 and 0)#pitch(between 1 and 0)#distance
+
+    heavy:
+        is_homing: true                                                 # if true, the projectile has homing ability
+        turn_radius: 0.26                                               # max turn angle per tick in radians (has no effect if homing is false)
+        reload_time: 500                                                # as ms
+        projectile_speed: 0.2                                           # block per second
+        projectile_lifetime: 500                                        # ticks (a tick is 1/20 of a second)
+        aim_delay: 15                                                   # as ms
+        material_fired: "minecraft:stick#10985"                         # itemID#customItemID
+        potion_effect: "BLINDNESS#30#1"                                 # effect#duration#amplifier
+        particle_trail: "ASH"                                           # particle name
+        ammo_type: "minecraft:TNT#2"                                    # itemID#amount (if amount is not specified, it will be 1)
+        explosive_yield: 5                                              # ???
+        shield_damage: 7                                                #
+        structure: "minecraft:stone#minecraft:stone#minecraft:stone"    # itemID#itemID#itemID
+        sound: "minecraft:block.anvil.hit#1#1#20"                            # sound#volume(between 1 and 0)#pitch(between 1 and 0)
+        launch_sound: "minecraft:block.anvil.hit#1#1#20"                     # sound#volume(between 1 and 0)#pitch(between 1 and 0)#distance
+
+computer_logic:
+    max_number_of_launchers: 10                                         # max number of launchers that can be controlled by a computer (must be integer)
+
+#Replace the craft types with the ones you want to use. These are just samples
+launcher_limits:
+    airskiff:
+        total: 5
+        classic: 3                                       # launcher type
+        heavy: 2                                         # launcher type
+    craft_type_2:
+        total: 7
+        classic: 4                                       # launcher type
+        heavy: 3                                         # launcher type
+
+computer_limits:
+    airskiff: 5
+    craft_type_2: 3
